@@ -1,0 +1,45 @@
+<div class="page_container" [class.is_mobile]="isMobile">
+  <h1>Успейте оформить подписку со скидкой</h1>
+  <div class="rates_container">
+    <ng-container *ngFor="let rate of rates">
+      <div class="rate_wrapper">
+        <header>
+          <h5 class="rate_label" *ngIf="!isMobile">{{ rate.label }}</h5>
+          <h3 class="rate_header">{{ rate.header }}</h3>
+        </header>
+        <main>
+          <div class="rate">
+            <span class="current_rate">{{ rate.rate }}</span
+            ><span class="discount">{{ rate.discount }}</span>
+          </div>
+          <p class="period">{{ rate.period }}</p>
+          <button class="rate_btn" type="button">
+            {{ !isMobile ? rate.action : '' }}
+            <svg
+              *ngIf="isMobile"
+              width="8"
+              height="13"
+              viewBox="0 0 8 13"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.5 1.5L6.50036 6.50036L1.5 11.5007"
+                stroke="#202020"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <p class="rate_period">
+            <span class="perc" *ngIf="isMobile && rate.perc">{{
+              rate.perc
+            }}</span
+            ><span class="rate_per">{{ rate.rate_period }}</span>
+          </p>
+        </main>
+      </div>
+    </ng-container>
+  </div>
+</div>

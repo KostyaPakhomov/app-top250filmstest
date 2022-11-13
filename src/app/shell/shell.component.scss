@@ -1,0 +1,44 @@
+@import "mixins";
+
+:host {
+  min-height: 100%;
+}
+
+.app-layout {
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+nz-header {
+  z-index: 1000;
+  box-shadow: 0 2px 8px #f0f1f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nz-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+  background: #fff;
+}
+
+.inner-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+  padding: 2.4rem;
+  padding-bottom: 0;
+  background-color: #fff;
+  overflow: auto;
+}
+
+.ant-layout-header {
+  height: 8rem;
+  padding: 0;
+  background-color: #fff;
+}

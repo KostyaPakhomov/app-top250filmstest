@@ -1,0 +1,52 @@
+<form nz-form [nzLayout]="'inline'" [formGroup]="form" (ngSubmit)="search()">
+  <nz-form-item>
+    <nz-form-control>
+      <nz-input-group [nzSuffix]="titleClearTpl">
+        <input
+          formControlName="title"
+          nz-input
+          type="text"
+          placeholder="Title"
+        />
+      </nz-input-group>
+      <ng-template #titleClearTpl>
+        <span
+          nz-icon
+          class="ant-input-clear-icon"
+          nzTheme="fill"
+          nzType="close-circle"
+          *ngIf="title?.value"
+          (click)="title?.setValue(null)"
+        ></span>
+      </ng-template>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control>
+      <nz-input-group [nzSuffix]="yearClearTpl">
+        <input
+          formControlName="year"
+          nz-input
+          mask="0000"
+          type="text"
+          placeholder="Year"
+        />
+      </nz-input-group>
+      <ng-template #yearClearTpl>
+        <span
+          nz-icon
+          class="ant-input-clear-icon"
+          nzTheme="fill"
+          nzType="close-circle"
+          *ngIf="year?.value"
+          (click)="year?.setValue(null)"
+        ></span>
+      </ng-template>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control>
+      <button nz-button nzType="primary">Искать</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>

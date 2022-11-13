@@ -18,8 +18,16 @@
     "module": "es2020",
     "lib": [
       "es2018",
+      "es2019.array",
       "dom"
-    ]
+    ],
+    "skipLibCheck": true,
+    "paths": {
+      "Env": ["src/environments/environment"],
+      "Core/*": ["src/app/core/*"],
+      "Shared/*": ["src/app/shared/*"]
+    },
+    "allowSyntheticDefaultImports": true
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

@@ -24,10 +24,6 @@ chrome-profiler-events*.json
 
 # IDE - VSCode
 .vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
 .history/*
 
 # misc
@@ -39,7 +35,13 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
+/.angular/cache/
 
 # System Files
 .DS_Store
 Thumbs.db
+
+# Project specific
+src/environments/version.ts
+src/environments/env.js
+.env

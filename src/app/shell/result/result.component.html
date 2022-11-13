@@ -1,0 +1,23 @@
+<nz-table
+  #basicTable
+  [nzLoading]="isLoading"
+  [nzLoadingDelay]="100"
+  [nzData]="(observable$ | async)!"
+>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Year</th>
+      <th>ImDbRating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data; trackBy: trackByFn">
+      <td>{{ data.id }}</td>
+      <td>{{ data.title }}</td>
+      <td>{{ data.year }}</td>
+      <td>{{ data.imDbRating }}</td>
+    </tr>
+  </tbody>
+</nz-table>

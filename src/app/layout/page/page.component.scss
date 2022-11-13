@@ -1,0 +1,208 @@
+@import "variables";
+@import "mixins";
+
+.page_container {
+    padding: 14rem 14rem 14rem;
+
+    h1 {
+        @include bold-text;
+        font-size: 4.8rem;
+        line-height: 5.9rem;
+        color: $black-color;
+        margin-bottom: 6rem;
+        width: 50%;
+    }
+
+    .rates_container {
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 4rem;
+        grid-template-rows: 40.7rem;
+
+        .rate_wrapper {
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: $back-rate;
+            border-radius: 1.5rem;
+
+            &:hover {
+                background: $back-rate-hover;
+                box-shadow: .2rem .2rem .8rem $gray-color;
+            }
+        }
+    }
+
+    &.is_mobile {
+        padding: 5.8rem 1.6rem 1.6rem;
+
+        h1 {
+            font-size: 2.4rem;
+            line-height: 2.9rem;
+            margin-bottom: 4rem;
+            width: 80%;
+        }
+
+        .rates_container {
+            grid-template-columns: 1fr;
+            grid-gap: 2rem;
+            grid-template-rows: repeat(3, auto);
+
+            .rate_wrapper {
+                padding: 2rem 7rem 2rem 2rem;
+                position: relative;
+                justify-content: flex-start;
+            }
+        }
+
+    }
+}
+
+header {
+    .rate_label {
+        @include medium-text;
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+        color: $black-color;
+        margin-bottom: 1rem;
+    }
+
+    .rate_header {
+        @include bold-text;
+        font-size: 2.5rem;
+        line-height: 3rem;
+        color: $black-color;
+    }
+}
+
+main {
+    .rate {
+        .current_rate {
+            @include bold-text;
+            font-size: 4.8rem;
+            line-height: 5.9rem;
+            color: $black-color;
+        }
+
+        .discount {
+            @include regular-text;
+            font-size: 2rem;
+            line-height: 2.4rem;
+            text-decoration-line: line-through;
+            color: $gray-color;
+            margin-left: 1rem;
+        }
+    }
+
+    .period {
+        @include regular-text;
+        font-size: 2rem;
+        line-height: 2.4rem;
+        color: $black-color;
+    }
+
+    .rate_btn {
+        @include bold-text;
+        font-size: 1.4rem;
+        line-height: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $black-color;
+        background: $white-color;
+        border-radius: 5rem;
+        width: 100%;
+        padding: 1.6rem 0;
+        cursor: pointer;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+
+        &:hover {
+            box-shadow: .2rem .2rem .8rem $gray-color;
+        }
+    }
+
+    .rate_period {
+        @include regular-text;
+        font-size: 1.4rem;
+        line-height: 2rem;
+        text-align: center;
+        color: $gray-color;
+    }
+}
+
+.is_mobile {
+    header {
+        margin-bottom: 1.5rem;
+
+        .rate_header {
+            font-size: 1.4rem;
+            line-height: 2rem;
+        }
+    }
+
+    main {
+        .rate {
+            .current_rate {
+                font-size: 3.2rem;
+                line-height: 3.9rem;
+            }
+
+            .discount {
+                font-size: 1.4rem;
+                line-height: 1.7rem;
+                margin-left: .5rem;
+            }
+        }
+
+        .period {
+            font-size: 1.4rem;
+            line-height: 1.7rem;
+        }
+
+        .rate_btn {
+            position: absolute;
+            top: 50%;
+            right: 2rem;
+            transform: translate(0, -50%);
+            font-size: 1.4rem;
+            line-height: 2rem;
+            border-radius: 5rem;
+            width: 4rem;
+            height: 4rem;
+            padding: 1.6rem 0;
+            cursor: pointer;
+            margin: 0;
+            padding: 0;
+
+            span {
+                display: inline-block;
+                width: 2.4rem;
+                height: 2.4rem;
+            }
+        }
+
+        .rate_period {
+            font-size: 1rem;
+            line-height: 1.4rem;
+            text-align: left;
+            margin-top: 1.5rem;
+
+            .perc {
+                background: $white-color;
+                border-radius: 2.3rem;
+                color: $black-color;
+                padding: .2rem .7rem;
+                margin-right: .5rem;
+            }
+
+            .rate_per {
+                border: 0.1rem solid $gray-color;
+                border-radius: 2.3rem;
+                padding: .2rem .7rem;
+            }
+        }
+    }
+}
