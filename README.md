@@ -2,27 +2,37 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.9.
 
-## Development server
+## Task
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Отобразить подходящие данные из массива с учетом / без учета фильтра.
 
-## Code scaffolding
+Реализация:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1) Сделать DataService
 
-## Build
+Получить TOP-250 фильмов с помощью API https://imdb-api.com/api/#IMDbList-header
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Сделать сервис-обработчик ошибок http запросов.
+API key добавлять через http intercepter.
+Результирующий массив возвращаемый в observable методом должен содержать только поля: id, title, year, imDbRating.
 
-## Running unit tests
+2) Сделать компонент "ФИЛЬТР"
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Содержит 2 поля (title, year, кнопка "Искать").
+При нажатии на кнопку "Искать" передавать данные из полей в другой компонент через роутинг.
 
-## Running end-to-end tests
+3) Второй компонент "РЕЗУЛЬТАТ"
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Принимать значения из роута.
+Получить данные из сервиса.
+При использовании RxJS осуществить фильтрацию данных по "И" (поиск по вхождению в значение).
+Отображает результат фильтрации
 
-## Further help
+Использование простых переменных (кроме хранения фильтра) нежелательно.
+В идеале все реализовать с использованием RxJS цепочек / подписок / async-pipe.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Задание 2 (никак не связано с первым)
+
+Сверстать адаптивный дизайн как отдельную страницу.
+https://www.figma.com/file/D9RR13Kx3sgcKdAO48HRp0/%D0%A2%D0%B0%D1%80%D0%B8%D1%84%D1%8B?node-id=0%3A1
 # app-top250filmstest
